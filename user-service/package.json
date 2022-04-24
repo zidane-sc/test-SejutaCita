@@ -1,0 +1,28 @@
+{
+  "name": "user-service",
+  "version": "0.1.0",
+  "description": "user service for handle CRUD user",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "jest",
+    "watch": "nodemon src/app.js"
+  },
+  "author": "zidanesc",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-jwt": "^7.4.3",
+    "humps": "^2.0.1",
+    "joi": "^17.6.0",
+    "mongoose": "^6.3.1",
+    "morgan": "^1.10.0",
+    "pino": "^7.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
