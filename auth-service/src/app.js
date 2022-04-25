@@ -12,9 +12,12 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 if (
-  !process.env.JWT_ACCESS_TOKEN_SECRET || 
+  !process.env.JWT_ACCESS_TOKEN_SECRET ||
   !process.env.MONGODB_URL ||
-  !process.env.JWT_REFRESH_TOKEN_SECRET
+  !process.env.JWT_REFRESH_TOKEN_SECRET ||
+  !process.env.GRACEFUL_SHUTDOWN_TIMEOUT ||
+  !process.env.JWT_ACCESS_TOKEN_EXPIRES_IN ||
+  !process.env.JWT_REFRESH_TOKEN_EXPIRES_IN
 ) {
   logger.fatal('ENV variable is not correct.');
   process.exit(1);
@@ -31,27 +34,26 @@ async function start() {
   await seedDB();
   const server = app.listen(port, () => logger.info(`App is running on port ${port}`));
 
-  // process.on('SIGTERM', () => {
-  //   logger.info('SIGTERM signal received.');
-  //   setTimeout(() => {
-  //     server.close(() => {
-  //       logger.info('HTTP server closed')
+  const gracefulShutdownTimeout = parseInt(process.env.GRACEFUL_SHUTDOWN_TIMEOUT);
+  const gracefulShutdownHandler = () => {
+    setTimeout(() => {
+      server.close(() => {
+        logger.info('HTTP server closed')
 
-  //       disconnectDB();
-  //     })
-  //   }, 60000);
-  // });
+        disconnectDB();
+      })
+    }, gracefulShutdownTimeout);
+  }
 
-  // process.on('SIGINT', () => {
-  //   logger.info('SIGINT signal received.');
-  //   setTimeout(() => {
-  //     server.close(() => {
-  //       logger.info('HTTP server closed')
+  process.on('SIGTERM', () => {
+    logger.info('SIGTERM signal received.');
+    gracefulShutdownHandler();
+  });
 
-  //       disconnectDB();
-  //     })
-  //   }, 60000);
-  // });
+  process.on('SIGINT', () => {
+    logger.info('SIGINT signal received.');
+    gracefulShutdownHandler()
+  });
 }
 
 start();
