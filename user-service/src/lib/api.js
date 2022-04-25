@@ -5,6 +5,7 @@ module.exports = {
     return function (payload) {
         return res.status(status).json({
           message,
+          status_code: status,
           data: humps.decamelizeKeys(payload),
         });
     };
