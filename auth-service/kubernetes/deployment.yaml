@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       labels:
-        project: test-sejutarasa
+        project: test-sejutacita
         app: auth-service
       annotations:
         description: auth service for handle authentication user
@@ -23,9 +23,9 @@ spec:
             - containerPort: 3000
           envFrom:
             - configMapRef:
-                name: test-sejutarasa-env-config
+                name: test-sejutacita-env-config
             - secretRef:
-                name: test-sejutarasa-env-secret
+                name: test-sejutacita-env-secret
           resources:
             limits:
               cpu: 300m
