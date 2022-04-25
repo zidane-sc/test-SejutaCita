@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: test-sejutarasa-env-config
+  name: test-sejutacita-env-config
 data:
   MONGODB_URL: mongodb://root:root@host.docker.internal:27016
   GRACEFUL_SHUTDOWN_TIMEOUT: "10000"
