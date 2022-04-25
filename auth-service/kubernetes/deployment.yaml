@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-service
+  template:
+    metadata:
+      labels:
+        project: test-sejutarasa
+        app: auth-service
+      annotations:
+        description: auth service for handle authentication user
+    spec:
+      containers:
+        - name: auth-service
+          image: auth-service:0.1.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: test-sejutarasa-env-config
+            - secretRef:
+                name: test-sejutarasa-env-secret
+          resources:
+            limits:
+              cpu: 300m
+              memory: 200M
+            requests:
+              cpu: 300m
+              memory: 200M
