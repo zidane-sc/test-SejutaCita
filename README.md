@@ -16,8 +16,7 @@
 - **MongoDB** - <https://www.mongodb.com>
 
 ## Architecture Diagram
-![sejutarasa-diagram-arsitektur](https://user-images.githubusercontent.com/67301786/165165686-4cb28760-c8a1-4294-a522-bc316746966a.png)
-
+![sejutarasa-diagram-arsitektur (1)](https://user-images.githubusercontent.com/67301786/165173209-ca6aab67-dfd1-433f-83ab-68ea664d589d.png)
 
 ## Repo Structure
 ```
