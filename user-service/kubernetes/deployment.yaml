@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-service
+  template:
+    metadata:
+      labels:
+        project: test-sejutarasa
+        app: user-service
+      annotations:
+        description: user service for handle CRUD user
+    spec:
+      containers:
+        - name: user-service
+          image: user-service:0.1.0
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 3001
+          envFrom:
+            - configMapRef:
+                name: test-sejutarasa-env-config
+            - secretRef:
+                name: test-sejutarasa-env-secret
+          resources:
+            limits:
+              cpu: 300m
+              memory: 200M
+            requests:
+              cpu: 300m
+              memory: 200M
