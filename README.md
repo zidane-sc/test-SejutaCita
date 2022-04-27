@@ -5,7 +5,7 @@
 - [Tech Stacks](#tech-stacks)
 - [Architecture Diagram](#architecture-diagram)
 - [Repo Structure](#repo-structure)
-- [How To](#how-to)
+- [How To Deploy](#how-to-deplot)
 - [Demo Deploy On Local](#demo-deploy-on-local)
 - [Credential](#credential)
 
@@ -40,8 +40,8 @@
     
 ```
 
-## How To
-How to deploy
+## How To Deploy
+How to deploy the app
 
 ### 1. Clone the project:
 
