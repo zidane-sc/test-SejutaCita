@@ -109,7 +109,8 @@ echo "127.0.0.1 api.testsejutarasa.user" | sudo tee -a /etc/hosts
 ```
 
 ## Demo Deploy On Local
-Using docker desktop
+Using docker desktop and running on wsl2
+
 ### 1. Build the image
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/67301786/165171266-e28be26a-f1f1-4777-8469-4e17c44049eb.gif)
 
