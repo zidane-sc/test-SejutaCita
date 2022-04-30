@@ -4,7 +4,7 @@
 
 - [Tech Stacks](#tech-stacks)
 - [Architecture Diagram](#architecture-diagram)
-- [Folder Structure](#repo-structure)
+- [Repo Structure](#repo-structure)
 - [How To Deploy](#how-to-deplot)
 - [Demo Deploy On Local](#demo-deploy-on-local)
 - [Credential](#credential)
