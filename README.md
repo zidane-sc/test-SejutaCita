@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Tech Stacks](#tech-stacks)
+- [Technologies Stacks](#tech-stacks)
 - [Architecture Diagram](#architecture-diagram)
 - [Repo Structure](#repo-structure)
 - [How To Deploy](#how-to-deplot)
