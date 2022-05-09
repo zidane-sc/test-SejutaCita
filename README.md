@@ -1,4 +1,4 @@
-# Test Coding SejutaCita.id
+# Test Coding SejutaCita
 
 ## Table of Contents
 
